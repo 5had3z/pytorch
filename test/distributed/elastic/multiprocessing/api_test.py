@@ -539,6 +539,7 @@ if not (TEST_WITH_DEV_DBG_ASAN or IS_WINDOWS or IS_MACOS):
                 tee_stderrs={0: "tee_stderr"},
                 error_files={0: "test_file"},
                 start_method="spawn",
+                sigterm_timeout=30.0,
             )
             mp_context._pc = mock.Mock()
             # Using mock since we cannot just set exitcode on process
